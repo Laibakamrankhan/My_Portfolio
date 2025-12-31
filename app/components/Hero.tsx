@@ -76,7 +76,7 @@ const Hero = () => {
         {/* Right Side: Text Content */}
         <div style={styles.textContainer}>
           <h1 style={styles.heading}>
-            Hi, I'm <span style={styles.highlight}>Laiba</span>
+            Hi, I'm <span style={styles.highlight}>Laiba Kamran</span>
           </h1>
           <p style={styles.subHeading}>
             Full Stack Developer & AI Enthusiast, <br /> crafting seamless web experiences.
