@@ -3,8 +3,7 @@ Personal portfolio website showcasing my projects, skills, and contact informati
 
 ## 🚀 Live Demo
 
-Click here to see the live site
-
+[🌐 View Live Site](https://my-portfolio-ten-gilt-29.vercel.app/)
 
 
 ## ✨ Features
