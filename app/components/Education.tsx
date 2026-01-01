@@ -67,7 +67,7 @@ const Education = () => {
      color: "from-blue-400 to-blue-600",
 },
 {
-      title: "Intermediate in Medical Science",
+      title: "Intermediate in Home Economics",
       period: "2021-2023",
       description:
         "Completed intermediate studies with focus on Home Economics.",
