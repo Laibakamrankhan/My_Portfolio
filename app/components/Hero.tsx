@@ -1,7 +1,9 @@
+"use client";
 import React from 'react';
 
 
 const Hero = () => {
+  const resumeLink = '/Laiba_Khan_Resume.pdf';
   const styles = {
     section: {
       backgroundColor: '#050816', 
@@ -61,7 +63,26 @@ const Hero = () => {
       marginTop: '10px',
       maxWidth: '500px',
       lineHeight: '1.5',
-    }
+    },
+    buttonContainer: {
+    marginTop: '20px',
+    display: 'flex',
+    gap: '12px', // space between buttons
+  },
+    button: {
+      marginTop: '30px', // enough spacing below text
+      padding: '8px 16px',
+      fontSize: '14px',
+      fontWeight: '600',
+      color: '#fff', // text color
+      background: 'linear-gradient(to right, #06b6d4, #3b82f6, #6366f1)',
+      border: 'none',
+      borderRadius: '8px',
+      cursor: 'pointer',
+      width: '120px',
+      gap: '12px',
+      transition: 'all 0.3s ease',
+    },
   };
 
   return (
@@ -81,7 +102,26 @@ const Hero = () => {
           <p style={styles.subHeading}>
             Full Stack Developer & AI Enthusiast, <br /> crafting seamless web experiences.
           </p>
-        </div>
+        
+        <div style={styles.buttonContainer}>
+          {/* Resume Button */}
+         <button
+          style={styles.button}
+          onClick={() => window.open(resumeLink, '_blank')}
+          >
+         Resume
+         </button>
+
+          {/* Projects Button */}
+         <a
+           href="#project"  // scrolls to section with id="project"
+           style={{ ...styles.button, textDecoration: 'none', display: 'inline-block', textAlign: 'center' }}
+           >
+            My Work
+          </a>
+          </div>
+       </div>
+ 
       </div>
     </section>
   );
