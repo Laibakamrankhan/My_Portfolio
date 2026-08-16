@@ -59,10 +59,10 @@ const Education = () => {
 
   const educationData: EducationItem[] = [
     {
-     title: "Associate Degree in Computer Science",
+     title: "Bachelor in Computer Science",
      period: "2025 - Present",
      description:
-       "Currently pursuing an associate degree with a focus on programming, problem-solving, databases, and core computer science fundamentals.",
+       "Currently pursuing an bachelors degree with a focus on programming, problem-solving, databases, and core computer science fundamentals.",
      icon: FaGraduationCap,
      color: "from-blue-400 to-blue-600",
 },
