@@ -2,7 +2,16 @@
 
 import React, { useRef } from "react";
 import { motion, useAnimation, useInView, Variants } from "framer-motion";
-import { FaGraduationCap, FaCode, FaPython, FaRobot, FaLaptop, FaDesktop, FaGoogle, FaShieldAlt } from "react-icons/fa";
+import {
+  FaGraduationCap,
+  FaCode,
+  FaPython,
+  FaRobot,
+  FaLaptop,
+  FaDesktop,
+  FaGoogle,
+  FaShieldAlt,
+} from "react-icons/fa";
 import { SiTypescript, SiNextdotjs } from "react-icons/si";
 import { IconType } from "react-icons";
 
@@ -44,7 +53,6 @@ const Education = () => {
     },
   };
 
-  
   const itemVariants: Variants = {
     hidden: { x: -50, opacity: 0 },
     visible: {
@@ -57,16 +65,20 @@ const Education = () => {
     },
   };
 
+  // =========================
+  // EDUCATION DATA
+  // =========================
+
   const educationData: EducationItem[] = [
     {
-     title: "Bachelor in Computer Science",
-     period: "2024 - 2027",
-     description:
-       "Currently pursuing an bachelors degree with a focus on programming, problem-solving, databases, and core computer science fundamentals.",
-     icon: FaGraduationCap,
-     color: "from-blue-400 to-blue-600",
-},
-{
+      title: "Bachelor in Computer Science",
+      period: "2024 - 2027",
+      description:
+        "Currently pursuing an bachelors degree with a focus on programming, problem-solving, databases, and core computer science fundamentals.",
+      icon: FaGraduationCap,
+      color: "from-blue-400 to-blue-600",
+    },
+    {
       title: "Intermediate in Home Economics",
       period: "2021-2023",
       description:
@@ -74,7 +86,13 @@ const Education = () => {
       icon: FaGraduationCap,
       color: "from-green-400 to-green-600",
     },
-    
+  ];
+
+  // =========================
+  // CERTIFICATION DATA
+  // =========================
+
+  const certificationData: EducationItem[] = [
     {
       title: "GIAIC - Artificial Intelligence & Computing",
       period: "Feb 2024 - Dec 2025",
@@ -116,46 +134,128 @@ const Education = () => {
       color: "from-blue-400 to-blue-600",
     },
     {
-  title: "Digiskill - Digital Literacy Course",
-  period: "2025",
-  icon: FaLaptop,
-  courses: [
-    {
-      quarter: "Module 1",
-      title: "Digital Foundations",
-      icon: FaDesktop,
-      status: "Completed",
-      description:
-        "Understanding computer fundamentals including hardware, software, operating systems, and internet basics.",
-    },
-    {
-      quarter: "Module 2",
-      title: "Productivity & Collaboration Tools",
-      icon: FaGoogle,
-      status: "Completed",
-      description:
-        "Hands-on experience with Microsoft Word, Excel, PowerPoint, and Google Workspace for academic and professional use.",
-    },
-    {
-      quarter: "Module 3",
-      title: "Digital Communication & Online Safety",
-      icon: FaShieldAlt,
-      status: "Completed",
-      description:
-        "Effective use of email, cloud storage, collaboration platforms, and best practices for online privacy and security.",
-    },
-    {
-      quarter: "Module 4",
-      title: "AI Tools & Freelancing Essentials",
-      icon: FaRobot,
-      status: "Completed",
-      description:
-        "Exploring AI tools for productivity, basic data entry, virtual assistance tasks, and creating freelance profiles on Fiverr and Upwork.",
-    },
-  ],
-    color: "from-purple-400 to-purple-600",
+      title: "Digiskill - Digital Literacy Course",
+      period: "2025",
+      icon: FaLaptop,
+      courses: [
+        {
+          quarter: "Module 1",
+          title: "Digital Foundations",
+          icon: FaDesktop,
+          status: "Completed",
+          description:
+            "Understanding computer fundamentals including hardware, software, operating systems, and internet basics.",
+        },
+        {
+          quarter: "Module 2",
+          title: "Productivity & Collaboration Tools",
+          icon: FaGoogle,
+          status: "Completed",
+          description:
+            "Hands-on experience with Microsoft Word, Excel, PowerPoint, and Google Workspace for academic and professional use.",
+        },
+        {
+          quarter: "Module 3",
+          title: "Digital Communication & Online Safety",
+          icon: FaShieldAlt,
+          status: "Completed",
+          description:
+            "Effective use of email, cloud storage, collaboration platforms, and best practices for online privacy and security.",
+        },
+        {
+          quarter: "Module 4",
+          title: "AI Tools & Freelancing Essentials",
+          icon: FaRobot,
+          status: "Completed",
+          description:
+            "Exploring AI tools for productivity, basic data entry, virtual assistance tasks, and creating freelance profiles on Fiverr and Upwork.",
+        },
+      ],
+      color: "from-purple-400 to-purple-600",
     },
   ];
+
+  // =========================
+  // REUSABLE SECTION
+  // =========================
+
+  const renderItems = (data: EducationItem[]) => (
+    <div className="max-w-4xl mx-auto">
+      {data.map((edu, index) => (
+        <motion.div
+          key={index}
+          variants={itemVariants}
+          className="mb-12 relative"
+        >
+          <div className="absolute left-0 top-0 bottom-0 w-1 bg-linear-to-b from-cyan-500 to-indigo-500 rounded-full" />
+
+          <div className="ml-8 bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-cyan-500/30 transition-all duration-300">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <div className="flex items-center gap-3 mb-2 md:mb-0">
+                <div
+                  className={`p-2 rounded-lg bg-linear-to-r ${edu.color}`}
+                >
+                  <edu.icon className="text-xl text-white" />
+                </div>
+
+                <h3 className="text-xl font-semibold text-white">
+                  {edu.title}
+                </h3>
+              </div>
+
+              <div className="flex items-center gap-2 text-white/70">
+                <span>{edu.period}</span>
+              </div>
+            </div>
+
+            {edu.description && (
+              <p className="text-white/70 mb-4">{edu.description}</p>
+            )}
+
+            {edu.courses && (
+              <div className="grid md:grid-cols-2 gap-4 mt-6">
+                {edu.courses.map((course) => (
+                  <motion.div
+                    key={course.quarter}
+                    variants={itemVariants}
+                    className="bg-white/5 rounded-xl p-4 border border-white/10"
+                  >
+                    <div className="flex items-center gap-3 mb-2">
+                      <course.icon className="text-xl text-purple-400" />
+
+                      <h4 className="font-medium text-white">
+                        {course.title}
+                      </h4>
+                    </div>
+
+                    <p className="text-sm text-gray-400 mb-2">
+                      {course.description}
+                    </p>
+
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs text-gray-500">
+                        {course.quarter}
+                      </span>
+
+                      <span
+                        className={`text-xs px-2 py-1 rounded-full ${
+                          course.status === "Completed"
+                            ? "bg-green-500/20 text-green-400"
+                            : "bg-blue-500/20 text-blue-400"
+                        }`}
+                      >
+                        {course.status}
+                      </span>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            )}
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  );
 
   return (
     <motion.section
@@ -179,86 +279,41 @@ const Education = () => {
       </div>
 
       <div className="relative z-10 container mx-auto px-4">
+
+        {/* =========================
+            EDUCATION SECTION
+        ========================= */}
+
         <motion.h2
           variants={itemVariants}
           className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-16"
         >
           <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 via-blue-400 to-indigo-400">
-            Educational Journey
+            Education
           </span>
         </motion.h2>
 
-        <div className="max-w-4xl mx-auto">
-          {educationData.map((edu, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="mb-12 relative"
-            >
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-linear-to-b from-cyan-500 to-indigo-500 rounded-full" />
-              <div className="ml-8 bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-cyan-500/30 transition-all duration-300">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                  <div className="flex items-center gap-3 mb-2 md:mb-0">
-                    <div
-                      className={`p-2 rounded-lg bg-linear-to-r ${edu.color}`}
-                    >
-                      <edu.icon className="text-xl text-white" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-white">
-                      {edu.title}
-                    </h3>
-                  </div>
-                  <div className="flex items-center gap-2 text-white/70">
-                    <span>{edu.period}</span>
-                  </div>
-                </div>
+        {renderItems(educationData)}
 
-                {edu.description && (
-                  <p className="text-white/70 mb-4">{edu.description}</p>
-                )}
+        {/* =========================
+            CERTIFICATIONS SECTION
+        ========================= */}
 
-                {edu.courses && (
-                  <div className="grid md:grid-cols-2 gap-4 mt-6">
-                    {edu.courses.map((course) => (
-                      <motion.div
-                        key={course.quarter}
-                        variants={itemVariants}
-                        className="bg-white/5 rounded-xl p-4 border border-white/10"
-                      >
-                        <div className="flex items-center gap-3 mb-2">
-                          <course.icon className="text-xl text-purple-400" />
-                          <h4 className="font-medium text-white">
-                            {course.title}
-                          </h4>
-                        </div>
-                        <p className="text-sm text-gray-400 mb-2">
-                          {course.description}
-                        </p>
-                        <div className="flex justify-between items-center">
-                          <span className="text-xs text-gray-500">
-                            {course.quarter}
-                          </span>
-                          <span
-                            className={`text-xs px-2 py-1 rounded-full ${
-                              course.status === "Completed"
-                                ? "bg-green-500/20 text-green-400"
-                                : "bg-blue-500/20 text-blue-400"
-                            }`}
-                          >
-                            {course.status}
-                          </span>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        <motion.h2
+          variants={itemVariants}
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-16 mt-20"
+        >
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 via-blue-400 to-indigo-400">
+            Certifications
+          </span>
+        </motion.h2>
+
+        {renderItems(certificationData)}
+
       </div>
     </motion.section>
   );
 };
 
 export default Education;
+
