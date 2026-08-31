@@ -183,13 +183,13 @@ const Projects: React.FC = () => {
     },
 
     {
-      name: "AI Study Platform - Full-Stack AI Learning App",
-      description:
-        "Casa-Craft is a full-stack e-commerce web application built with Next.js and TypeScript.",
-      tags: [
-        { name: "FastAPI & Python", color: "#60a5fa" },
-        { name: "Next.js", color: "#34d399" },
-        { name: "PostgreSQL", color: "#f87171" },
+  name: "AI Study Platform - AI-Powered Learning App",
+  description:
+    "A full-stack AI learning platform that helps students manage study materials, ask questions with an AI study assistant, generate quizzes, and track learning performance.",
+  tags: [
+    { name: "Next.js", color: "#60a5fa" },
+    { name: "FastAPI & Python", color: "#34d399" },
+    { name: "PostgreSQL", color: "#f87171" },
       ],
       image: "/Image/study.png",
       live_demo_link: "https://youtu.be/Y3umM5oT5VU?si=DOw6ZWaLfH1CADLC",
