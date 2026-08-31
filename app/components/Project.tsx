@@ -197,19 +197,20 @@ const Projects: React.FC = () => {
         "https://github.com/Laibakamrankhan/Ai-Study-Platform",
     },
     {
-      name: "AI Study Platform - Full-Stack AI Learning App",
-      description:
-        "Casa-Craft is a full-stack e-commerce web application built with Next.js and TypeScript.",
-      tags: [
-        { name: "FastAPI & Python", color: "#60a5fa" },
-        { name: "Next.js", color: "#34d399" },
-        { name: "PostgreSQL", color: "#f87171" },
-      ],
-      image: "/Image/resume.png",
-      live_demo_link: "https://youtu.be/Y3umM5oT5VU?si=DOw6ZWaLfH1CADLC",
-      source_code_link:
-        "https://github.com/Laibakamrankhan/Ai-Study-Platform",
-    },
+  name: "ResumePilot - AI Resume Builder",
+  description:
+    "A full-stack AI-powered resume builder that helps users create professional, ATS-friendly resumes with AI-assisted content improvement, multiple templates, live preview, and PDF export.",
+  tags: [
+    { name: "Next.js", color: "#34d399" },
+    { name: "FastAPI & Python", color: "#60a5fa" },
+    { name: "PostgreSQL", color: "#f87171" },
+    { name: "AI", color: "#a78bfa" },
+  ],
+  image: "/Image/resume.png",
+  live_demo_link: "https://youtu.be/Y3umM5oT5VU?si=DOw6ZWaLfH1CADLC",
+  source_code_link:
+    "https://github.com/Laibakamrankhan/Ai-Resume-Builder",
+},
   ];
 
   return (
